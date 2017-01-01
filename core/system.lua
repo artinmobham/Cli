@@ -2,7 +2,7 @@ package.path = package.path .. ';.luarocks/share/lua/5.2/?.lua'
   ..';.luarocks/share/lua/5.2/?/init.lua'
 package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
-require("./bot/utils")
+require("./core/bcp")
 
 local f = assert(io.popen('/usr/bin/git describe --tags', 'r'))
 VERSION = assert(f:read('*a'))
@@ -184,22 +184,22 @@ end
 
 -- Save the content of _config to config.lua
 function save_config( )
-  serialize_to_file(_config, './data/config.lua')
-  print ('saved config into ./data/config.lua')
+  serialize_to_file(_config, './core/config.lua')
+  print ('saved config into ./core/config.lua')
 end
 
 -- Returns the config from config.lua file.
 -- If file doesn't exist, create it.
 function load_config( )
-  local f = io.open('./data/config.lua', "r")
+  local f = io.open('./core/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
-    print ("Created new config file: data/config.lua")
+    print ("Created new config file: core/config.lua")
     create_config()
   else
     f:close()
   end
-  local config = loadfile ("./data/config.lua")()
+  local config = loadfile ("./core/config.lua")()
   for v,user in pairs(config.sudo_users) do
     print("Sudo user: " .. user)
   end
@@ -252,65 +252,14 @@ function create_config( )
     "serverinfo"
     },
     sudo_users = {184018132},--Sudo users
-    moderation = {data = 'data/moderation.json'},
-    about_text = [[Electrovirus national security bot🌐
- E N S
-Sudo
-▕ Electrovirus▕
-Github
-▕ https://github.com/Electrovirus/E-N-S.git
-┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
+    moderation = {data = 'core/moderation.json'},
+    about_text = [[
+TB | thunderbolt bot version 1		
 ]],
     help_text_realm = [[
 Realm Commands:
 !creategroup [Name]
 Create a group
-!createrealm [Name]
-Create a realm
-!setname [Name]
-Set realm name
-!setabout [group|sgroup] [GroupID] [Text]
-Set a group's about text
-!setrules [GroupID] [Text]
-Set a group's rules
-!lock [GroupID] [setting]
-Lock a group's setting
-!unlock [GroupID] [setting]
-Unock a group's setting
-!settings [group|sgroup] [GroupID]
-Set settings for GroupID
-!wholist
-Get a list of members in group/realm
-!who
-Get a file of members in group/realm
-!type
-Get group type
-!kill chat [GroupID]
-Kick all memebers and delete group
-!kill realm [RealmID]
-Kick all members and delete realm
-!addadmin [id|username]
-Promote an admin by id OR username *Sudo only
-!removeadmin [id|username]
-Demote an admin by id OR username *Sudo only
-!list groups
-Get a list of all groups
-!list realms
-Get a list of all realms
-!support
-Promote user to support
-!-support
-Demote user from support
-!log
-Get a logfile of current group or realm
-!broadcast [text]
-!broadcast Hello !
-Send text to all groups
-Only sudo users can run this command
-!bc [group_id] [text]
-!bc 123456789 Hello !
-This command will send text to [group_id]
-Check @Ens_Commands
 ]],
     help_text = [[
 To see bot commands 🔰
@@ -321,8 +270,8 @@ To see bot commands 🔰
 Checkout this channel 👉 @Ens_Commands
 ]],
   }
-  serialize_to_file(config, './data/config.lua')
-  print('saved config into ./data/config.lua')
+  serialize_to_file(config, './core/config.lua')
+  print('saved config into ./core/config.lua')
 end
 
 function on_our_id (id)
