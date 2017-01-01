@@ -3,12 +3,12 @@ http = require "socket.http"
 https = require "ssl.https"
 ltn12 = require "ltn12"
 
-serpent = (loadfile "./libs/serpent.lua")()
-feedparser = (loadfile "./libs/feedparser.lua")()
-json = (loadfile "./libs/JSON.lua")()
-mimetype = (loadfile "./libs/mimetype.lua")()
-redis = (loadfile "./libs/redis.lua")()
-JSON = (loadfile "./libs/dkjson.lua")()
+serpent = (loadfile "./core/libs/serpent.lua")()
+feedparser = (loadfile "./core/libs/feedparser.lua")()
+json = (loadfile "./core/libs/JSON.lua")()
+mimetype = (loadfile "./core/libs/mimetype.lua")()
+redis = (loadfile "./core/libs/redis.lua")()
+JSON = (loadfile "./core/libs/dkjson.lua")()
 
 http.TIMEOUT = 10
 
@@ -129,7 +129,7 @@ function download_to_file(url, file_name)
 
   file_name = file_name or get_http_file_name(url, headers)
 
-  local file_path = "data/tmp/"..file_name
+  local file_path = "core/data/tmp/"..file_name
   print("Saved to: "..file_path)
 
   file = io.open(file_path, "w+")
