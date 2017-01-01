@@ -2694,7 +2694,7 @@ local function run(msg, matches)
 		end
 
 		if matches[1] == 'help' and not is_owner(msg) then
-			text = "To see bot commands 🔰Checkout this channel 👉 @Ens_Commands"
+			text = "🔗You can see bot commands in\n @Commands_ch"
 			reply_msg(msg.id, text, ok_cb, false)
 		elseif matches[1] == 'help' and is_owner(msg) then
 			local name_log = user_print_name(msg.from)
