@@ -3,17 +3,17 @@
 <p align="left">Creator: [[ Visit! ]](https://telegram.me/Electrovirus)
 <p align="left">Channel: [[ JOIN! ]](https://telegram.me/joinchat/EV_official)
 ***
-##Strong management
-#High speed 
-#Complitable with all plugins
-#Many options and locks
-#& ...
+#Strong management
+##High speed 
+##Complitable with all plugins
+##Many options and locks
+##& ...
 
 | INSTALL BOT |
 |:-----------------------|
 - <p align="left">Clone Source:
 ```sh
-git clone https://github.com/janlou/AdvanSource && cd AdvanSource
+git clone https://github.com/Electrovirus/ThunderBolt.git && cd ThunderBolt
 ```
 - <p align="left">install bot:
 ```sh
