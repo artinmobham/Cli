@@ -17,24 +17,18 @@ git clone https://github.com/Electrovirus/ThunderBolt.git && cd ThunderBolt
 ```
 - <p align="left">install bot:
 ```sh
-chmod 700 start.sh
-./start.sh install
-y
+Install packages
+./packages.sh
+
+Then install the bot
+./install.sh install
+
+And run ir
+./install.sh
+
 ```
 | ANTI CRASH |
 |:-----------------------|
 ```sh
-tmux new-session -s script "bash steady.sh -t"
+tmux new-session -s script "bash install.sh -t"
 ```
-- <p align="left">Now run your bot then enter bot's phone number and join code:
-`./start.sh -q`
-- <p align="left">And you can start bot with steady script:
-
-| FREE SERVER: |
-|:-----------------------|
-| `./steady.sh -t` |
-
-| BOUGHT SERVER: |
-|:-----------------------|
-| `screen ./steady.sh -t` |
-
