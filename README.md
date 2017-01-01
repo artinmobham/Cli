@@ -1,4 +1,4 @@
-<h4>An advanced anti-spam bot based on (TG-CLI) with HIGH speed for you! ) powered by [Electrovirus™](http://telegram.me/Ev_official).
+<h4>An advanced anti-spam bot based on (TG-CLI) with HIGH speed for you!  powered by [Electrovirus™](http://telegram.me/Ev_official).
 ***
 <p align="left">Creator: [[ Visit! ]](https://telegram.me/Electrovirus)
 <p align="left">Channel: [[ JOIN! ]](https://telegram.me/joinchat/EV_official)
