@@ -9,7 +9,7 @@ update() {
   install_rocks
 }
 
-# Will install luarocks on THIS_DIR/.luarocks
+#Luarocks installation
 install_luarocks() {
   git clone https://github.com/keplerproject/luarocks.git
   cd luarocks
@@ -20,12 +20,12 @@ install_luarocks() {
   ./configure --prefix=$PREFIX --sysconfdir=$PREFIX/luarocks --force-config
 
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "Error. Luarocks installation unsuccesful."; exit $RET;
   fi
 
   make build && make install
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting.";exit $RET;
+    then echo "Error.  Luarocks installation unsuccesful.";exit $RET;
   fi
 
   cd ..
@@ -35,12 +35,12 @@ install_luarocks() {
 install_rocks() {
   ./.luarocks/bin/luarocks install luasocket
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "Error.  Luasocket installation unsuccesful."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install oauth
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "Error.  oauth installation unsuccesful."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install redis-lua
@@ -112,7 +112,7 @@ else
   fi
   while true; do
    rm -r ../.telegram-cli/state
-   ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/ens.lua -l 1 -E $@
+   ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./core/system.lua -l 1 -E $@
    sleep 3
   done
 fi
