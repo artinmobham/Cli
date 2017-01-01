@@ -1,7 +1,7 @@
 local function set_bot_photo(msg, success, result)
   local receiver = get_receiver(msg)
   if success then
-    local file = 'data/photos/bot.jpg'
+    local file = 'core/data/photos/bot.jpg'
     print('File downloaded to:', result)
     os.rename(result, file)
     print('File moved to:', file)
