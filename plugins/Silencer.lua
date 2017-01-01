@@ -23,7 +23,7 @@ local second = string.gsub(matches[4], 's', '')
  local num3 = tonumber(second) 
 local num4 = tonumber(num1 + num2 + num3)
 redis:setex(hash, num4, true)
- return "👥Group Mute By |"..msg.from.id.."|\n🔆Time For Mute Group :\n"..matches[2]..":"..matches[3]..":"..matches[4].."\n➖➖➖➖➖➖➖➖➖➖➖\n @ENS_Tg"
+ return "👥Group Mute By |"..msg.from.id.."|\n🔆Time For Mute Group :\n"..matches[2]..":"..matches[3]..":"..matches[4].."\n➖➖➖➖➖➖➖➖➖➖➖\n"
  end
  end
 if matches[1] == 'unmuteall' and is_momod(msg) then
