@@ -250,8 +250,7 @@ function create_config( )
     "Supergroups",
     "Terminal",
     "Warning",
-    "Leave_ban",
-    "serverinfo"
+    "Leave_ban"
     },
     sudo_users = {184018132},--Sudo users
     moderation = {data = 'core/moderation.json'},
@@ -262,14 +261,16 @@ TB | thunderbolt bot version 1
 Realm Commands:
 !creategroup [Name]
 Create a group
+
+All commands in @Commands_ch		
 ]],
     help_text = [[
-To see bot commands 🔰
-Checkout this channel 👉 @Ens_Commands
+🔗You can see bot commands in 
+@Commands_ch
 ]],
 	help_text_super =[[
-To see bot commands 🔰
-Checkout this channel 👉 @Ens_Commands
+🔗You can see bot commands in 
+@Commands_ch		
 ]],
   }
   serialize_to_file(config, './core/config.lua')
