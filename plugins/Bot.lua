@@ -180,10 +180,10 @@ local function run(msg,matches)
     	end
     	return
     end
-    if matches[1] == "pm" then
+    if matches[1] == "msg" then
     	local text = "Message From "..(msg.from.username or msg.from.last_name).."\n\nMessage : "..matches[3]
     	send_large_msg("user#id"..matches[2],text)
-    	return "Message has been sent"
+    	return "Message has been sent to "..matches[2]..""
     end
     
     if matches[1] == "pmblock" then
@@ -261,8 +261,8 @@ end
 	if matches[1] == 'reload' then
 		receiver = get_receiver(msg)
 		reload_plugins(true)
-		post_msg(receiver, "Done✔", ok_cb, false)
-		return "🔄Bot is Reloaded!\n@ENS_Tg"
+		post_msg(receiver, "Done🌐", ok_cb, false)
+		return "🌏Bot is Reloaded!"
 	end
 	--[[*For Debug*
 	if matches[1] == "vardumpmsg" and is_admin1(msg) then
@@ -306,7 +306,7 @@ end
 
 return {
   patterns = {
-	"^[#!/](pm) (%d+) (.*)$",
+	"^[#!/](msg) (%d+) (.*)$",
 	"^[#!/](import) (.*)$",
 	"^[#!/](pmunblock) (%d+)$",
 	"^[#!/](pmblock) (%d+)$",
