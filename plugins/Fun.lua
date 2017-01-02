@@ -622,14 +622,14 @@ if matches[1] == "get" then
     text = text:trim() 
     text,b = text:gsub('^!+','') 
   end 
-  local file = io.open("./data/note/"..msg.from.id..".txt", "w") 
+  local file = io.open("./core/data/note/"..msg.from.id..".txt", "w") 
   file:write(text) 
   file:flush() 
   file:close() 
   return "You can use it:\n!mynote\n\nYour note has been changed to:\n"..text 
  end 
 if matches[1] == "mynote" then 
-local note = io.open("./data/note/"..msg.from.id..".txt", "r") 
+local note = io.open("./core/data/note/"..msg.from.id..".txt", "r") 
    local mn = note:read("*all") 
    if matches[1] == "mynote" then 
       return mn 
