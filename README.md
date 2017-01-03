@@ -17,14 +17,16 @@ git clone https://github.com/Electrovirus/ThunderBolt.git && cd ThunderBolt
 ```
 - <p align="left">install bot:
 ```sh
+cd installation
+
 Install packages
 ./packages.sh
 
 Then install the bot
-./install.sh install
+./run.sh install
 
 And run ir
-./install.sh
+./run.sh
 
 ```
 | ANTI CRASH |
