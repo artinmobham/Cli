@@ -79,7 +79,8 @@ install() {
   git submodule update --init --recursive
   patch -i "core/disabled.patch" -p 0 --batch --forward
   RET=$?;
-
+  
+  cd ..
   cd tg
   if [ $RET -ne 0 ]; then
     autoconf -i
