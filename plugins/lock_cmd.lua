@@ -28,11 +28,11 @@ local function run(msg, matches)
             
                     local hash = 'cmdlock:'..msg.to.id
                     redis:set(hash, true)
-                    return "Cmd lock is active🔒"
+                    return "Cmd lock is active"
   elseif is_momod(msg) and matches[1] == 'unlock' then
                     local hash = 'cmdlock:'..msg.to.id
                     redis:del(hash)
-                    return "Cmd lock is deactive🔓"
+                    return "Cmd lock is deactive"
 end
 
 end
