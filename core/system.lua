@@ -250,27 +250,18 @@ function create_config( )
     "Supergroups",
     "Terminal",
     "Warning",
-    "Leave_ban"
+    "leave_ban"
     },
     sudo_users = {184018132},--Sudo users
     moderation = {data = 'core/moderation.json'},
     about_text = [[
 TB | thunderbolt bot version 1		
 ]],
-    help_text_realm = [[
-Realm Commands:
-!creategroup [Name]
-Create a group
-
-All commands in @Commands_ch		
+    help_text_realm = [[		
 ]],
     help_text = [[
-🔗You can see bot commands in 
-@Commands_ch
 ]],
 	help_text_super =[[
-🔗You can see bot commands in 
-@Commands_ch		
 ]],
   }
   serialize_to_file(config, './core/config.lua')
