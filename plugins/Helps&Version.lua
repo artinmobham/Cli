@@ -80,12 +80,10 @@ end
 
 
 if matches[1] == 'helpfun' then
-if not is_momod(msg) then return end
 return redis:get(hashfun)
 end
 
 if matches[1] == 'help' then
-if not is_momod(msg) then return end
 return redis:get(hash)
 end
 
