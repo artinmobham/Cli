@@ -93,7 +93,6 @@ return redis:get(hashmods)
 end
 
 if matches[1] == 'price' then
-if not is_momod(msg) then return end
 return redis:get(hashp)
 end
         
