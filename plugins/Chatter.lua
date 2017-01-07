@@ -22,7 +22,7 @@ local function list_chats(msg)
 
   if hash then
     local names = redis:hkeys(hash)
-    local text = 'list of chat witch robot: ️\n\n'
+    local text = 'Chat Lists: ️\n\n'
     for i=1, #names do
       text = text..'⭕️ '..names[i]..'\n'
     end
@@ -43,7 +43,7 @@ local function save_value(msg, name, value)
   end
   if hash then
     redis:hset(hash, name, value)
-    return '('..name..')\n saved!'
+    return name..'\n Saved \n'
   end
 end
 local function del_value(msg, name)
@@ -56,7 +56,7 @@ local function del_value(msg, name)
   end
   if hash then
     redis:hdel(hash, name)
-    return '('..name..')\nremoved! '
+    return name..'\n Cleaned \n'
   end
 end
 
@@ -68,7 +68,7 @@ local function delallchats(msg)
     for i=1, #names do
       redis:hdel(hash,names[i])
     end
-    return "saved!"
+    return "All Saved Chats Have Been Cleaned \n"
 	else
 	return 
   end
@@ -96,25 +96,22 @@ local function run(msg, matches)
     return text
     end
  end
-  if matches[1] == 'ch' then
+  if matches[1] == 'chats' then
     local output = list_chats(msg)
     return output
   else
     local name = user_print_name(msg.from)
     savelog(msg.to.id, name.." ["..msg.from.id.."] used /get ".. matches[1])-- save to logs
-local text = get_value(msg, matches[1])
-if msg.reply_id then
-    return reply_msg(msg.id,text,ok_cb,false)
+    return get_value(msg, matches[1])
   end
-end
 end
 
 return {
   patterns = {
-    "^[!/#](ch)$",
-    "^[#!/](ch) (+) ([^%s]+) (.+)$",
-    "^[#!/](ch) (rm)$",
-    "^[#!/](ch) (-) (.*)$",
+    "^[!/#](chats)$",
+    "^[#!/](chat) (+) ([^%s]+) (.+)$",
+    "^[#!/](chat) (rm)$",
+    "^[#!/](chat) (-) (.*)$",
     "^(.+)$",
   },
   run = run
