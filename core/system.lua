@@ -223,7 +223,7 @@ function create_config( )
     "Grouptype",
     "Hammer",
     "Helps&Version",
-    "Identify",
+    "Identification",
     "Kickme",
     "Messenger",
     "Normalgroups",
@@ -250,7 +250,7 @@ function create_config( )
     "Supergroups",
     "Terminal",
     "Warning",
-    "leave_ban"
+    "Leave_ban"
     },
     sudo_users = {184018132},--Sudo users
     moderation = {data = 'core/moderation.json'},
