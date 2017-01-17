@@ -1,7 +1,6 @@
---Begin msg_checks.lua
+--Begin Analyzer.lua
 --Begin pre_process function
 local function pre_process(msg)
--- Begin 'RondoMsgChecks' text checks by @rondoozle
 if is_chat_msg(msg) or is_super_group(msg) then
 	if msg and not is_momod(msg) and not is_whitelisted(msg.from.id) then --if regular user
 	local data = load_data(_config.moderation.data)
