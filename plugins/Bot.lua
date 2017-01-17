@@ -264,6 +264,12 @@ end
 		post_msg(receiver, "Done🌐", ok_cb, false)
 		return "🌏Bot is Reloaded!"
 	end
+		if matches[1] == 'بروز رسانی' then
+		receiver = get_receiver(msg)
+		reload_plugins(true)
+		post_msg(receiver, "انجام شد!", ok_cb, false)
+		return "ربات با موفقیت بروز رسانی شد"
+	end
 	--[[*For Debug*
 	if matches[1] == "vardumpmsg" and is_admin1(msg) then
 		local text = serpent.block(msg, {comment=false})
@@ -320,6 +326,7 @@ return {
 	"^[#!/](sendcontact) (.*) (.*) (.*)$",
 	--"^[#!/](mycontact)$",
 	"^[#/!](reload)$",
+	"^بروز رسانی$",
 	"^[#/!](updateid)$",
 	"^[#/!](sync_gbans)$",
 	--"^[#/!](addlog)$",
