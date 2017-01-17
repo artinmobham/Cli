@@ -29,7 +29,7 @@ function clear_commandbad(msg, var_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:del(hash, var_name)
-  return 'پاک شدند'
+  return 'Cleared'
 end
 
 local function list_variables2(msg, value)
