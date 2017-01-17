@@ -1583,9 +1583,9 @@ elseif get_cmd == "setadmin" then
 					save_data(_config.moderation.data, data)
 					savelog(channel, name_log.."["..from_id.."] set ["..v.peer_id.."] as owner by username")
 				if result.username then
-					text = "👑"..member_username.." ["..v.peer_id.."] added as owner"
+					text = "👑"..member_username.." ["..v.peer_id.."] is Group owner now \n🔖Owners commands : /helpowner"
 				else
-					text = "👑["..v.peer_id.."] added as owner"
+					text = "👑["..v.peer_id.."] is Group owner now \n🔖Owners commands : /helpowner"
 				end
 			end
 		elseif memberid and vusername ~= member and vpeer_id ~= memberid then
@@ -1853,7 +1853,7 @@ local function run(msg, matches)
 				return "Create a link using /newlink first!\n\nOr if I am not creator use /setlink to set your link"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-			return "Group link:\n"..group_link
+			return "💭Group link:\n"..group_link
 		end
 
 		if matches[1] == "invite" and is_sudo(msg) then
@@ -2477,7 +2477,7 @@ local function run(msg, matches)
 			data[tostring(msg.to.id)]['settings']['flood_msg_max'] = flood_max
 			save_data(_config.moderation.data, data)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] set flood to ["..matches[2].."]")
-			return 'Flood has been set to: '..matches[2]
+			return 'Floodsensation  has been set to: '..matches[2]
 		end
 		if matches[1] == 'public' and is_momod(msg) then
 			local target = msg.to.id
@@ -2486,7 +2486,7 @@ local function run(msg, matches)
 				return set_public_membermod(msg, data, target)
 			end
 			if matches[2] == 'no' then
-				savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: not public")
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: private")
 				return unset_public_membermod(msg, data, target)
 			end
 		end
@@ -2818,7 +2818,7 @@ return {
     "[#!/](mp) (.*)",
 	"[#!/](md) (.*)",
     "^(https://telegram.me/joinchat/%S+)$",
-	"msg.to.peer_id",
+	--"msg.to.peer_id",
 	"%[(document)%]",
 	"%[(photo)%]",
 	"%[(video)%]",
