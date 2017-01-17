@@ -285,11 +285,9 @@ delete_msg(msg.id, ok_cb, false)
 			end
 		end
 	end
-end
--- End 'RondoMsgChecks' text checks by @Electrovirus	
+end	
 return msg
 end
---End pre_process function
 return {
 	patterns = {},
 	pre_process = pre_process
