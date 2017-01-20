@@ -23,7 +23,7 @@ local second = string.gsub(matches[4], 'ثانیه', '')
  local num3 = tonumber(second) 
 local num4 = tonumber(num1 + num2 + num3)
 redis:setex(hash, num4, true)
- return "🤖TeleSurena🤖\n➖➖➖➖➖➖➖➖\n😶گروه سایلنت همگانی شد😶\n⏱ ساعت : "..matches[2].."\n⏱ دقیقه : "..matches[3].." \n⏱ ثانیه : "..matches[4].."\n➖➖➖➖➖➖➖➖\n📝"
+ return "➖➖➖➖➖➖➖➖\n😶گروه سایلنت همگانی شد😶\n⏱ ساعت : "..matches[2].."\n⏱ دقیقه : "..matches[3].." \n⏱ ثانیه : "..matches[4].."\n➖➖➖➖➖➖➖➖\n📝"
  end
  end
 if matches[1] == 'حذف سایلنت همگانی' and is_momod(msg) then
