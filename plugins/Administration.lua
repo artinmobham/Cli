@@ -39,7 +39,7 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = '⚡SuperGroup Has been added to moderated groups \n🌎By 「【@Electrovirus】〖184018132〗」.\n📟Use /setexpire (value) to set expire date for the group \n📌Use /type (gptype) to set group type.'
+	  local text = '#⃣SuperGroup is added to \ncore/database/moderation\n⚠️Database reloaded\n┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅\n📍Added by ⇒ Sudoer\n📍Owner ⇒ Not set \n{Set group holder by /setowner (@username)}\n📍ExpireDate ⇒ Not set\n{Set expire date by /setexpire (value 1-999)}\n📍Commands list ⇒ /help'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -104,13 +104,13 @@ end
 
 --Get and output info about supergroup
 local function callback_info(cb_extra, success, result)
-local title ="Info for SuperGroup: ["..result.title.."]\n\n"
-local admin_num = "Admin count: "..result.admins_count.."\n"
-local user_num = "User count: "..result.participants_count.."\n"
-local kicked_num = "Kicked user count: "..result.kicked_count.."\n"
-local channel_id = "ID: "..result.peer_id.."\n"
+local title ="🌐Info for SuperGroup: ["..result.title.."]\n\n"
+local admin_num = "📍Admin count: "..result.admins_count.."\n"
+local user_num = "📍User count: "..result.participants_count.."\n"
+local kicked_num = "📍Kicked user count: "..result.kicked_count.."\n"
+local channel_id = "📍ID: "..result.peer_id.."\n"
 if result.username then
-	channel_username = "Username: @"..result.username
+	channel_username = "📍Username: @"..result.username
 else
 	channel_username = ""
 end
