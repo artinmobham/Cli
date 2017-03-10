@@ -12,7 +12,9 @@ end
 end
 return {
   patterns = {
-    "^[!#/](.*)$",
+    "^[!#/](userid)$",
+    "^[!#/](gpid)$",
+    "^[!#/](msgid)$",
   },
   run = run
 }
