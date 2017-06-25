@@ -252,7 +252,7 @@ function create_config( )
     "Warning",
     "Leave_ban"
     },
-    sudo_users = {184018132},--Sudo users
+    sudo_users = {211325469},--Sudo users
     moderation = {data = 'core/moderation.json'},
     about_text = [[
 TB | thunderbolt bot version 1		
